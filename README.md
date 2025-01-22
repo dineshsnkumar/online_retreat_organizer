@@ -11,6 +11,4 @@
 - Users can register and sign up
 - Admins can create retreats and add resources 
 
-##### How to run the project?
-TODO
 
