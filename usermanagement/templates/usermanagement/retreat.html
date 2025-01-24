@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Test to see if it is working</h1>
-</body>
-</html>
+{% for retreat in retreat_list %}
+<ul>
+    <li>
+        <a href="{{retreat.id}}">{{retreat.name}}</a>
+    </li>
+</ul>
+{% endfor %}
