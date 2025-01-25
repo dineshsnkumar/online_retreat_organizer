@@ -13,7 +13,6 @@ def user_dashboard(request):
 
 def retreat_details(request, retreat_id):
     retreat_detail = Retreat.objects.get(pk=retreat_id)
-    print(retreat_detail)
     context = {
         'retreat_detail': retreat_detail,
     }
