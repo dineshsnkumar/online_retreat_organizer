@@ -29,13 +29,22 @@
     </nav>
 
     {% for retreat in retreat_list %}
-    <ul>
-      <li>
-        <a href="{% url 'usermanagement:retreat_details' retreat.id %}"
-          >{{retreat.name}}</a
-        >
-      </li>
-    </ul>
+    <div class="card">
+      <div class="row">
+        <div class="col offset-md-2"><h1>{{retreat.name}}</h1></div>
+        <div class="col">
+          <h2>{{retreat.start_date}} - {{retreat.end_date}}</h2>
+        </div>
+        <div class="col">
+          <a
+            class="btn btn-success"
+            href="{% url 'usermanagement:retreat_details' retreat.id %}"
+            >Details
+          </a>
+        </div>
+      </div>
+    </div>
+
     {% endfor %}
   </body>
 </html>

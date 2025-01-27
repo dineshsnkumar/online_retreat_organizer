@@ -1,5 +1,7 @@
 {% extends "usermanagement/base.html" %} {% block content %}
-<h1>{{retreat_detail.name}}</h1>
-<h2>{{retreat_detail.description}}</h2>
-<p>{{retreat_detail.schedule}}</p>
-{% endblock content %}
+<div class="container">
+  <h1>{{retreat_detail.name}}</h1>
+  <h2>{{retreat_detail.description}}</h2>
+  <p>{{retreat_detail.schedule}}</p>
+  {% endblock content %}
+</div>

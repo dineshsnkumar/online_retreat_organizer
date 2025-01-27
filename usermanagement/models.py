@@ -8,6 +8,7 @@ class Retreat(models.Model):
     description = models.CharField(max_length=1200, blank= True)
     schedule = models.TextField(blank=True)
     zoom_link = models.URLField(blank=True)
+    retreat_image = models.URLField(default="https://vh1220.z2systems.com/neon/resource/vh1220/images/buddhalei3(2).JPG")
     def __str__(self):
         return self.name
 
