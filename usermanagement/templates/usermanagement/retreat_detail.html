@@ -1,7 +1,61 @@
 {% extends "usermanagement/base.html" %} {% block content %}
 <div class="container">
-  <h1>{{retreat_detail.name}}</h1>
-  <h2>{{retreat_detail.description}}</h2>
-  <p>{{retreat_detail.schedule}}</p>
+  <div class="row">
+    <div class="col-8 col-sm-8 border gx-5">
+      <h2>{{retreat_detail.name}}</h2>
+      <h4>{{retreat_detail.description}}</h4>
+      <table class="table table-bordered caption-top">
+        <caption>
+          Saturday and Sunday Schedule
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Timings</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>4am</td>
+            <td>Sitting Meditation</td>
+          </tr>
+          <tr>
+            <td>6am</td>
+            <td>Walking Meditation</td>
+          </tr>
+          <tr>
+            <td>7am</td>
+            <td>Sitting Meditation</td>
+          </tr>
+          <tr>
+            <td>10am</td>
+            <td>Sitting with Instructions</td>
+          </tr>
+          <tr>
+            <td>11am</td>
+            <td>Q &amp A Session</td>
+          </tr>
+          <tr>
+            <td>2pm</td>
+            <td>Dhamma Talk</td>
+          </tr>
+          <tr>
+            <td>4pm</td>
+            <td>Metta Chanting and Sit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <h2>Zoom details</h2>
+      <h4>
+        <a href="{{retreat_detail.zoom_link}}"
+          >Click here to join the meeting
+        </a>
+      </h4>
+    </div>
+  </div>
+  </div>
+
   {% endblock content %}
 </div>
