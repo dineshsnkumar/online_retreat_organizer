@@ -24,4 +24,6 @@ urlpatterns = [
     path("", include("usermanagement.urls")),
     path('admin/', admin.site.urls),
     path("login/", auth_view.LoginView.as_view(template_name = "users/login.html"), name="login"),
+    path("logout/", user_view.log_out, name="logout"),
+    path("profile/", user_view.profile , name="profile"),
 ]

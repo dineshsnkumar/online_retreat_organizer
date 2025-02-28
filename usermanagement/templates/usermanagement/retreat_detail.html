@@ -1,7 +1,7 @@
 {% extends "usermanagement/base.html" %} {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-8 col-sm-8 border gx-5">
+    <div class="col-8 col-sm-8 gx-5">
       <h2>{{retreat_detail.name}}</h2>
       <h4>{{retreat_detail.description}}</h4>
       <table class="table table-bordered caption-top">
@@ -45,16 +45,26 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <div class="col-4">
+
       <h2>Zoom details</h2>
       <h4>
         <a href="{{retreat_detail.zoom_link}}"
           >Click here to join the meeting
         </a>
       </h4>
+
+    </div>
+    <div class="col-4">
+      <h2>Announcements</h2>
+      <h4>{{retreat_detail.announcement}}</h4>
+    </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-8 col-sm-8 mx-5">
+   
+    </div>
   </div>
 
   {% endblock content %}

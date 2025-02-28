@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Retreat
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+@login_required(login_url='login')
 def user_dashboard(request):
     retreat_list = Retreat.objects.all()
     context = {
@@ -11,6 +12,7 @@ def user_dashboard(request):
     return render(request,'usermanagement/retreat.html', context )
 
 
+@login_required(login_url='login')
 def retreat_details(request, retreat_id):
     retreat_detail = Retreat.objects.get(pk=retreat_id)
     context = {

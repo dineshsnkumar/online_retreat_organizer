@@ -25,7 +25,9 @@
         <a class="nav-item nav-link" href="#">Schedule</a>
         <a class="nav-item nav-link" href="#">Recordings</a>
         <a class="nav-item nav-link" href="#">Resources</a>
-        <a class="nav-item nav-link" href="#">Logout</a>
+        {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+        {% endif %}
       </div>
     </nav>
 
