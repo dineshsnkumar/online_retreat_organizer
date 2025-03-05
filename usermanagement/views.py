@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Retreat
+from .models import Retreat, Recording
 from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='login')
@@ -20,4 +20,12 @@ def retreat_details(request, retreat_id):
     }
     return render(request,'usermanagement/retreat_detail.html', context )
 
+
+def retreat_recordings(request, retreat_id):
+    recordings = Recording.objects.get(pk=retreat_id)
+    context = {
+        'recordings': recordings,
+        'retreat_id': retreat_id,
+    }
+    return render(request,'usermanagement/recordings.html', context )
 
