@@ -22,7 +22,7 @@ def retreat_details(request, retreat_id):
 
 
 def retreat_recordings(request, retreat_id):
-    recordings = Recording.objects.get(pk=retreat_id)
+    recordings = Recording.objects.filter(retreat=retreat_id).values()
     context = {
         'recordings': recordings,
         'retreat_id': retreat_id,

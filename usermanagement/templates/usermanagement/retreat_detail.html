@@ -1,7 +1,11 @@
 {% extends "usermanagement/base.html" %} {% block content %}
 <nav class="navbar navbar-light bg-warning mb-4">
-  <a class="navbar-brand" href="#"> VH </a>
+  <a class="navbar-brand" href="{% url 'usermanagement:retreat_details' retreat_detail.id %}"> VH </a>
   <div class="navbar">
+    <a
+      class="nav-item nav-link"
+      href="{% url 'usermanagement:retreat_details' retreat_detail.id %}"
+      >Schedule</a>
     <a
       class="nav-item nav-link"
       href="{% url 'usermanagement:retreat_recordings' retreat_detail.id %}"

@@ -1,7 +1,17 @@
 {% extends "usermanagement/base.html" %} {% block content %}
 <nav class="navbar navbar-light bg-warning mb-4">
-  <a class="navbar-brand" href="#"> VH </a>
+  <a
+    class="navbar-brand"
+    href="{% url 'usermanagement:retreat_details' retreat_id %}"
+  >
+    VH
+  </a>
   <div class="navbar">
+    <a
+      class="nav-item nav-link"
+      href="{% url 'usermanagement:retreat_details' retreat_id %}"
+      >Schedule</a
+    >
     <a
       class="nav-item nav-link"
       href="{% url 'usermanagement:retreat_recordings' retreat_id %}"
@@ -15,9 +25,27 @@
 </nav>
 <div class="container">
   <div class="row">
-    <h2>{{recordings.name}}</h2>
-    <h2>{{recordings.time}}</h2>
-    <a href="{{recordings.recording_link}}"> ▶️ </a>
+    <table class="table table-bordered caption-top">
+      <caption>
+        Retreat recordings
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Time</th>
+          <th scope="col">Recording Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for recording in recordings %}
+        <tr>
+          <td>{{recording.name}}</td>
+          <td>{{recording.time}}</td>
+          <td><a href="{{recording.recording_link}}"> ▶️ </a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
   {% endblock content %}
 </div>
