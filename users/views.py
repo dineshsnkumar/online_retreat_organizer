@@ -25,4 +25,8 @@ def log_out(request):
     logout(request)
     return redirect('login')
 
+
+def landing_page(request):
+    return render(request, 'users/landing.html')
+
     

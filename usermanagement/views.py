@@ -20,7 +20,7 @@ def retreat_details(request, retreat_id):
     }
     return render(request,'usermanagement/retreat_detail.html', context )
 
-
+@login_required(login_url='login')
 def retreat_recordings(request, retreat_id):
     recordings = Recording.objects.filter(retreat=retreat_id).values()
     context = {
