@@ -9,4 +9,5 @@ urlpatterns = [
     # retreat/1/
     path("retreat/<int:retreat_id>/", views.retreat_details, name="retreat_details"),
     path("retreat/<int:retreat_id>/recordings/", views.retreat_recordings, name="retreat_recordings"),
+    path("retreat/<int:retreat_id>/resources/", views.retreat_resources, name="retreat_resources"),
 ]

@@ -31,3 +31,11 @@ class Recording(models.Model):
         return self.name
 
 
+class Resource(models.Model):
+    retreat = models.ForeignKey(Retreat, on_delete = models.CASCADE, default= 1 )
+    name = models.CharField(max_length=200)
+    resoruce_link = models.URLField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
